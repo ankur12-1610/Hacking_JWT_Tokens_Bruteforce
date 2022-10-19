@@ -101,5 +101,5 @@ Now, as the new token is forged, `user1` has the token corresponding to `user2`.
 > <img src="https://user-images.githubusercontent.com/76884959/196615470-3719f817-7e51-495c-b291-67061c1d6f10.png" width="800" />
 
 # Build Settings
-markdown: krnadown
+markdown: kramdown
 remote_theme: pages-themes/hacker@v0.2.0
