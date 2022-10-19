@@ -40,15 +40,47 @@ Getting the JWt Token for the user with username `user1`.
 --header 'Authorization: Basic dXNlcjE6ODk4OQ==' \
 --data-raw ''`
 <img src="https://user-images.githubusercontent.com/76884959/196610338-e1687f73-4974-4e0b-bedf-fc36ededa24e.png" width="600" />
+
 The response contains the JWT Token for the user.
 
 #### Step 3:
 Decoding the token header and payload parts using https://jwt.io.
 <img src="https://user-images.githubusercontent.com/76884959/196611018-98564f27-161e-47b1-be41-ca070cb9b340.png" width="600" />
+
 The token uses HS256 algorithm (a symmetric signing key algorithm).
 
 Since it is mentioned in the challenge description that a weak secret key has been used to sign the token and the constraints on the key are also specified, a bruteforce attack could be used to disclose the correct secret key.
 
 #### Step 4:
+We'll be using John The Ripper (jtr) for performing the bruteforce attack. For installing jtr follow the give command: `sudo apt-get install john -y` or `sudo snap install john-the-ripper`
 
+To check if it is installed type `john` in the terminal.
+
+<img src="https://user-images.githubusercontent.com/76884959/196611821-f6f05e27-fc56-4b16-bbcf-d5ee2c4d2f8c.png" width="600" />
+
+#### Step 5:
+Save the JWT Token obtained in Step 2 into a file called `jwt.txt`.
+
+#### Step 6:
+Generate a wordlist used for brute-forcing the signing-key:
+Save the following Python script as `generate-wordlist.py`:
+```
+fp = open("wordlist.txt", "w")
+
+for i in range (10):
+  for j in range (10):
+    for k in range (10):
+      for l in range (10):
+        fp.write(str(i) + str(j) + str(k) + str(l) + "\n");
+
+fp.close()
+```
+
+Run the above python script to generate the wordlist.
+**Command**" `python3 generate-wordlist.py`
+
+#### Step 7:
+The final step is to burte-force the signing key:
+**Command**: `john jwt.txt — wordlist=wordlist.txt — format=HMAC-SHA256`
+<img stc="https://user-images.githubusercontent.com/76884959/196613036-990d3989-74fb-4c06-8586-a3107e86d6e4.png" width="600" />
 
