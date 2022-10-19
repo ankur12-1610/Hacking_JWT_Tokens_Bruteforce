@@ -84,6 +84,7 @@ Run the above python script to generate the wordlist.
 #### Step 7:
 The final step is to burte-force the signing key:
 **Command**: `john jwt.txt — wordlist=wordlist.txt — format=HMAC-SHA256`
+
 <img src="https://user-images.githubusercontent.com/76884959/196613036-990d3989-74fb-4c06-8586-a3107e86d6e4.png" width="600" />
 
 #### Step 8:
@@ -98,7 +99,7 @@ Since the signing key is already known, the username of the user could be change
 Now this forged token will allow `user1` to access the secrets which were only allowed to `user2`.
 
 `user1` is authenticated and the user is able to see the secret namely, `password1` for the token generated with the username-`user1`
-> <img src="https://user-images.githubusercontent.com/76884959/196614923-94b2cc63-ad0e-42a9-b13d-c6274794fdc0.png" width="600" />
+> <img src="https://user-images.githubusercontent.com/76884959/196614923-94b2cc63-ad0e-42a9-b13d-c6274794fdc0.png" width="800" />
 
 Now, as the new token is forged, `user1` has the token corresponding to `user2`. which enables `user1` to get an acess to `user2`'s secret.
-> <img src="https://user-images.githubusercontent.com/76884959/196615470-3719f817-7e51-495c-b291-67061c1d6f10.png" width="600" />
+> <img src="https://user-images.githubusercontent.com/76884959/196615470-3719f817-7e51-495c-b291-67061c1d6f10.png" width="800" />
