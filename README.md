@@ -25,8 +25,8 @@ Breaking down the different parts:
 > ![b2dzI](https://user-images.githubusercontent.com/76884959/196462855-a856240c-56eb-4b41-8d5f-5b8636a21736.png)
 
 ### Initial Scenario
-The scenario consits of a REST API running on a target machine and uses JWT-based authorization.
-> **Note**: The signing key used for token generation is weak.
+The scenario consists of a REST API running on a target machine and uses JWT-based authorization.
+> **Note**: The signing key used for token generation is weak and the REST API is present in the repo itself.
 
 ### Implementation
 #### Step 1:
