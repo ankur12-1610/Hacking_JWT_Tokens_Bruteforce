@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Hacking JWT Tokens: By Bruteforcing Weak Signing Key"
+permalink: /
+---
+
 # Hacking JWT Tokens: By Bruteforcing Weak Signing Key
 
 This is the way of hacking JWT tokens signed using weak keys. We will be using John The Ripper for determining the correct signing key!
