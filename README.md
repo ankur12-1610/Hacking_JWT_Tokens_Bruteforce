@@ -32,6 +32,7 @@ The scenario consits of a REST API running on a target machine and uses JWT-base
 #### Step 1:
 Check the presence oh the REST API.
 **Command**: `curl 127.0.0.1:500`
+
 <img src="https://user-images.githubusercontent.com/76884959/196610094-e1dac5fd-441b-484b-a010-1eb5fa9f4eec.png" width="600" />
 
 #### Step 2:
@@ -39,6 +40,7 @@ Getting the JWt Token for the user with username `user1`.
 **Command**: `curl --location --request GET 'http://127.0.0.1:5000/login' \
 --header 'Authorization: Basic dXNlcjE6ODk4OQ==' \
 --data-raw ''`
+
 <img src="https://user-images.githubusercontent.com/76884959/196610338-e1687f73-4974-4e0b-bedf-fc36ededa24e.png" width="600" />
 
 The response contains the JWT Token for the user.
@@ -82,5 +84,21 @@ Run the above python script to generate the wordlist.
 #### Step 7:
 The final step is to burte-force the signing key:
 **Command**: `john jwt.txt — wordlist=wordlist.txt — format=HMAC-SHA256`
-<img stc="https://user-images.githubusercontent.com/76884959/196613036-990d3989-74fb-4c06-8586-a3107e86d6e4.png" width="600" />
+<img src="https://user-images.githubusercontent.com/76884959/196613036-990d3989-74fb-4c06-8586-a3107e86d6e4.png" width="600" />
 
+#### Step 8:
+Since the secret key for signing the token is known, it can be used to create a valid token. Use https://jwt.io to create a new token.
+
+Over here we change the username of the user in order to obtain a new token which can only be used by `user2` and not `user1`.
+
+Since the signing key is already known, the username of the user could be changed and the corresponding token would be generated.
+
+<img src="https://user-images.githubusercontent.com/76884959/196614220-35db0341-788a-43e8-8bdb-fe885386ebfa.png" width="600" />
+
+Now this forged token will allow `user1` to access the secrets which were only allowed to `user2`.
+
+`user1` is authenticated and the user is able to see the secret namely, `password1` for the token generated with the username-`user1`
+> <img src="https://user-images.githubusercontent.com/76884959/196614923-94b2cc63-ad0e-42a9-b13d-c6274794fdc0.png" width="600" />
+
+Now, as the new token is forged, `user1` has the token corresponding to `user2`. which enables `user1` to get an acess to `user2`'s secret.
+> <img src="https://user-images.githubusercontent.com/76884959/196615470-3719f817-7e51-495c-b291-67061c1d6f10.png" width="600" />
