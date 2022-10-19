@@ -27,3 +27,28 @@ Breaking down the different parts:
 ### Initial Scenario
 The scenario consits of a REST API running on a target machine and uses JWT-based authorization.
 > **Note**: The signing key used for token generation is weak.
+
+### Implementation
+#### Step 1:
+Check the presence oh the REST API.
+**Command**: `curl 127.0.0.1:500`
+<img src="https://user-images.githubusercontent.com/76884959/196610094-e1dac5fd-441b-484b-a010-1eb5fa9f4eec.png" width="600" />
+
+#### Step 2:
+Getting the JWt Token for the user with username `user1`.
+**Command**: `curl --location --request GET 'http://127.0.0.1:5000/login' \
+--header 'Authorization: Basic dXNlcjE6ODk4OQ==' \
+--data-raw ''`
+<img src="https://user-images.githubusercontent.com/76884959/196610338-e1687f73-4974-4e0b-bedf-fc36ededa24e.png" width="600" />
+The response contains the JWT Token for the user.
+
+#### Step 3:
+Decoding the token header and payload parts using https://jwt.io.
+<img src="https://user-images.githubusercontent.com/76884959/196611018-98564f27-161e-47b1-be41-ca070cb9b340.png" width="600" />
+The token uses HS256 algorithm (a symmetric signing key algorithm).
+
+Since it is mentioned in the challenge description that a weak secret key has been used to sign the token and the constraints on the key are also specified, a bruteforce attack could be used to disclose the correct secret key.
+
+#### Step 4:
+
+
