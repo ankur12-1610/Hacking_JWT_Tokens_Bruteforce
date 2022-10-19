@@ -1,9 +1,3 @@
----
-layout: page
-title: "Hacking JWT Tokens: By Bruteforcing Weak Signing Key"
-permalink: /
----
-
 # Hacking JWT Tokens: By Bruteforcing Weak Signing Key
 
 This is the way of hacking JWT tokens signed using weak keys. We will be using John The Ripper for determining the correct signing key!
@@ -105,3 +99,7 @@ Now this forged token will allow `user1` to access the secrets which were only a
 
 Now, as the new token is forged, `user1` has the token corresponding to `user2`. which enables `user1` to get an acess to `user2`'s secret.
 > <img src="https://user-images.githubusercontent.com/76884959/196615470-3719f817-7e51-495c-b291-67061c1d6f10.png" width="800" />
+
+# Build Settings
+markdown: krnadown
+remote_theme: pages-themes/hacker@v0.2.0
