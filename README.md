@@ -30,13 +30,13 @@ The scenario consists of a REST API running on a target machine and uses JWT-bas
 
 ### Implementation
 #### Step 1:
-Check the presence oh the REST API.
+Check the presence oh the REST API. <br/>
 **Command**: `curl 127.0.0.1:500`
 
 <img src="https://user-images.githubusercontent.com/76884959/196610094-e1dac5fd-441b-484b-a010-1eb5fa9f4eec.png" width="600" />
 
 #### Step 2:
-Getting the JWt Token for the user with username `user1`.
+Getting the JWt Token for the user with username `user1`. <br/>
 **Command**: `curl --location --request GET 'http://127.0.0.1:5000/login' \
 --header 'Authorization: Basic dXNlcjE6ODk4OQ==' \
 --data-raw ''`
@@ -79,7 +79,7 @@ fp.close()
 ```
 
 Run the above python script to generate the wordlist.
-**Command**" `python3 generate-wordlist.py`
+**Command**: `python3 generate-wordlist.py`
 
 #### Step 7:
 The final step is to burte-force the signing key:
