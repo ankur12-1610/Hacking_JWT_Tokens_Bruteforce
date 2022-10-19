@@ -83,7 +83,7 @@ Run the above python script to generate the wordlist.
 
 #### Step 7:
 The final step is to burte-force the signing key:
-**Command**: `john jwt.txt — wordlist=wordlist.txt — format=HMAC-SHA256`
+**Command**: `john jwt.txt --wordlist=wordlist.txt --format=HMAC-SHA256`
 
 <img src="https://user-images.githubusercontent.com/76884959/196613036-990d3989-74fb-4c06-8586-a3107e86d6e4.png" width="600" />
 
