@@ -88,11 +88,7 @@ The final step is to burte-force the signing key:
 <img src="https://user-images.githubusercontent.com/76884959/196613036-990d3989-74fb-4c06-8586-a3107e86d6e4.png" width="600" />
 
 #### Step 8:
-Since the secret key for signing the token is known, it can be used to create a valid token. Use https://jwt.io to create a new token.
-
-Over here we change the username of the user in order to obtain a new token which can only be used by `user2` and not `user1`.
-
-Since the signing key is already known, the username of the user could be changed and the corresponding token would be generated.
+Since the secret key for signing the token is known, it can be used to create a valid token. Use https://jwt.io to create a new token. Over here we change the username of the user in order to obtain a new token which can only be used by `user2` and not `user1`. Since the signing key is already known, the username of the user could be changed and the corresponding token would be generated.
 
 <img src="https://user-images.githubusercontent.com/76884959/196614220-35db0341-788a-43e8-8bdb-fe885386ebfa.png" width="600" />
 
